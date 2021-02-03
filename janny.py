@@ -20,7 +20,7 @@ import bs4
 import multiprocessing
 
 #Custom import
-import chistes
+from utils import chistes
 
 from ibm_watson import TextToSpeechV1
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
@@ -262,7 +262,6 @@ class Janny:
             self.sources += articles['url'] + " \n"
             number_of_notices += 1
         self.speak(f"Este es un resumen del dia {self.get_date()}. {self.get_hour()}. {self.get_weather()}. A continuación, pasaré a decirle los encabezados mas importantes que encontré en la red. \n{self.news_headers}. Estos fueron los encabezados mas importantes a nivel internacional.")
-        
 
     def get_weather(self, city="Montevideo"):
         BASE_URL = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={self.WEATHER_API}"
