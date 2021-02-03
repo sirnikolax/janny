@@ -1,3 +1,6 @@
-dependencias/
+env/
 .vscode/
 __pycache__/
+credentials.json
+quickstart.py
+token.pickle
